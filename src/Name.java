@@ -11,8 +11,10 @@ public class Name {
     public void Start(){
         System.out.println("First Player,Type Your Name Please.");
         name1 = scan.next();
+        setName1(name1);
         System.out.println("Second Player,Type Your Name Please.");
         name2 = scan.next();
+        setName2(name2);
     }
 
     public String getName1() {

@@ -1,66 +1,93 @@
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Menu {
     Name sample = new Name();
     Scanner c = new Scanner(System.in);
-    Show sh = new Show();
     MyRandom random = new MyRandom();
+    StartPlaying start = new StartPlaying();
+
     private int option ;
 
     public Menu(){}
 
-    public void showMenu(int i){
-        sample.Start();
-        System.out.println("Player"+i+":");
+    public void showMenu(String turn ){
+
+        System.out.println("Player"+turn+":");
         System.out.println("1-Correct Your Name");
         System.out.println("2-About Us");
         System.out.println("3-Guide For Playing");
         System.out.println("4-Start Playing");
         System.out.println("Type The Number Of Your Option.");
         option = c.nextInt();
+
     }
 
-    public void choices(int i){
-        showMenu(i);
+    public void choices(String turn){
+        int i = 0;
+         if(turn.equals("first"))
+             i=1;
+         else
+             i=2;
          switch (option){
-
              case 1: {
                  String name = c.next();
-                 if (i == 1)
+                 if (i == 1){
                      sample.setName1(name);
-                 if (i == 2)
+                     showMenu(turn );
+                 break;}
+                 if (i == 2){
                      sample.setName2(name);
-                 else
+                     showMenu(turn );
+                 break;
+                 }
                      System.out.println("Error");
+                     showMenu(turn );
+                     break;
              }
+             case 2: {
+                 System.out.println("2"); //write s.t
+                 showMenu(turn);
 
-             case 2:
-                 System.out.println(); //write s.t
-
-             case 3 :
-
+             }
+             case 3 :{//write st.
+                 System.out.println("3");
+                 showMenu(turn);
+                 break;
+             }
              case 4 :{
-                 sh.firstMap();
-                 int turn = random.generate1();
-                 if(turn == 1) {
-                     System.out.println(sample.getName1() + "You Play as Allied Team.");
-                     System.out.println(sample.getName2() + "You Play as Axis Team.");
+                 if(turn.equals("first")){
+                     showMenu(turn);
                  }
-                 else {
-                     System.out.println(sample.getName2() + "You Play as Allied Team.");
-                     System.out.println(sample.getName1() + "You Play as Axis Team.");
+                 else{
+                     int tur = random.generate1();
+                     if(tur == 1) {
+                         System.out.println(sample.getName1() + " Play as Allied Team.");
+                         System.out.println(sample.getName2() + " Play as Axis Team.");
+                         //one = 1;
+                     }
+                     else {
+                         System.out.println(sample.getName2() + " Play as Allied Team.");
+                         System.out.println(sample.getName1() + " Play as Axis Team.");
+                         //two = 2;
+                     }
+                     start.firstStep_Carts();
                  }
-                 System.out.println("");//write st
-                 sh.MapWithArmyBeforeStart();
-                 int turn1 = random.generate1();
-                 
-
+                 break;
              }
-
-             default:
+             default: {
                  System.out.println("Error");
+                 showMenu(turn);
+                 break;
+             }
          }
+    }
+    public void mainMenu(String t){
+        sample.Start();
+
+        showMenu(t);
+        choices(t);
 
     }
 }

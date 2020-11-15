@@ -1,4 +1,8 @@
+import com.diogonunes.jcolor.Attribute;
+
 import java.util.ArrayList;
+
+import static com.diogonunes.jcolor.Ansi.colorize;
 
 public class Show {
     private ArrayList<String> colors = new ArrayList<>();
@@ -22,6 +26,8 @@ public class Show {
     public void firstMap() {
         addColors();
         String s = null;
+        System.out.println(colorize("_______________________________________", Attribute.MAGENTA_TEXT()));
+        System.out.println("here is the first map:");
         int k = 0;
             for (k = 0; k < 9; k++) {
                 int i = 0;
@@ -52,9 +58,9 @@ public class Show {
                         continue;}
 
                     if((z==1 && k== 1) || (z==2 && k== 1) || (z==3 && k== 1) || (z==1 && k== 2) || (z==0 && k== 4)){
-                        System.out.print(s + " *   "+ConsoleColors.RESET);
+                        System.out.print(s + " *  "+ConsoleColors.RESET);
                         System.out.print(ConsoleColors.BLUE+e.add("water")+ConsoleColors.RESET);
-                        System.out.print(s+"  *" + ConsoleColors.RESET);
+                        System.out.print(s+"  * " + ConsoleColors.RESET);
                         continue;}
 
                     if((z==9 && k== 2) || (z==12 && k== 2) || (z==1 && k== 3) || (z==3 && k== 3) || (z==11 && k== 3) || (z==1 && k== 4) || (z==8 && k== 4)  || (z==12 && k== 4)
@@ -92,10 +98,13 @@ public class Show {
                 }
                 System.out.println();
             }
+        System.out.println();
         }
 
         public void MapWithArmyBeforeStart(){
             addColors();
+            System.out.println(colorize("_______________________________________", Attribute.MAGENTA_TEXT()));
+            System.out.println("here is the first map of your all army:");
             String str = null;
             int k = 0;
             for (k = 0; k < 9; k++) {
@@ -175,6 +184,7 @@ public class Show {
                 }
                 System.out.println();
             }
+            System.out.println();
         }
 }
 

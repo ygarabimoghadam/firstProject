@@ -1,15 +1,15 @@
 import java.util.ArrayList;
 
 public class Emoji {
-    String outp ;
+
     public Emoji(){}
 
     public String   add(String inp) {
         String tape = "\uD83C\uDF04";
-        String pol = "\uD83C\uDF09";
-        //String water = "\uD83C\uDF0A";
+        //String pol = "\uD83C\uDF09";
+        String pol = "⛩";
         String water = "\uD83D\uDCA7";
-        String jangal = "\uD83C\uDF34";
+        String jangal = "\uD83C\uDF43";
         String shahr = "\uD83C\uDFD5";
         String panahgah = "\uD83C\uDFE0";
         String bomb = "\uD83D\uDCA3";
