@@ -24,7 +24,7 @@ public class Menu {
 
     }
 
-    public void choices(String turn){
+    public void choices(String turn, String n1 , String n2){
         int i = 0;
          if(turn.equals("first"))
              i=1;
@@ -61,18 +61,8 @@ public class Menu {
                      showMenu(turn);
                  }
                  else{
-                     int tur = random.generate1();
-                     if(tur == 1) {
-                         System.out.println(sample.getName1() + " Play as Allied Team.");
-                         System.out.println(sample.getName2() + " Play as Axis Team.");
-                         //one = 1;
-                     }
-                     else {
-                         System.out.println(sample.getName2() + " Play as Allied Team.");
-                         System.out.println(sample.getName1() + " Play as Axis Team.");
-                         //two = 2;
-                     }
-                     start.firstStep_Carts();
+
+                     start.firstStep_Carts(n1,n2);
                  }
                  break;
              }
@@ -85,9 +75,10 @@ public class Menu {
     }
     public void mainMenu(String t){
         sample.Start();
-
+        String name1 = sample.getName1();
+        String name2 = sample.getName2();
         showMenu(t);
-        choices(t);
+        choices(t,name1,name2);
 
     }
 }

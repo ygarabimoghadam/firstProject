@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Random;
 
 public class MyRandom {
@@ -59,5 +58,5 @@ public class MyRandom {
                 if(rand>=36 && rand<=40)
                     carts.printCards(5);
             }
+        }
     }
-}
