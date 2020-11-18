@@ -1,11 +1,14 @@
-
+/**
+ * this method provide all the emojies that used in the game .
+ * unicode .
+ *
+ */
 public class Emoji {
 
     public Emoji(){}
 
     public String   add(String inp) {
         String tape = "\uD83C\uDF04";
-        //String pol = "\uD83C\uDF09";
         String pol = "⛩";
         String water = "\uD83D\uDCA7";
         String jangal = "\uD83C\uDF43";

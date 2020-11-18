@@ -1,8 +1,10 @@
 import com.diogonunes.jcolor.Attribute;
-
 import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.*;
 
+/**
+ * this class print 5 different carts that used in the game using Jcolor library
+ */
 public class Carts {
     Attribute one = RED_TEXT();
     Attribute two = BLUE_TEXT();

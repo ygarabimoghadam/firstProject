@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * this class give and keep the name of each player .
+ */
 public class Name {
     private String name1;
     private String name2;
@@ -7,6 +10,9 @@ public class Name {
 
     public Name(){}
 
+    /**
+     * in the first of the game,this method give and set the name of players.
+     */
     public void Start(){
         System.out.println("First Player,Type Your Name Please.");
         name1 = scan.next();
